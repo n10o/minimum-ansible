@@ -24,13 +24,15 @@
 - 手作業によるミス
 - 途中からわけわからなくなる
 
+<img src="image/despair.jpg" style="width: 700px; height: 400px;"/>
+ 
 ---
 
 ## 自動化して楽になりたい
 
 --
 
-<!-- .slide: data-background="#000000" -->
+<!-- .slide: data-background="#DDDDDD" -->
 # でも
 
 ---
@@ -47,11 +49,14 @@
 
 --
 
-<!-- .slide: data-background="#007777" -->
-## イギリスの産業革命を思い出そう
+<!-- .slide: data-background="#33CC99" -->
+## イギリスの産業革命を思い出す
 - 工場制機械工業の導入により職を追われる人が急増
 - 手作業によりシステムに温かみが生まれる
 - 職人芸の尊重
+- 自動化すればいいというものではない
+
+<img src="image/industrialrevolution.jpg" style="width: 800px; height: 400px;"/>
 
 ---
 
@@ -72,6 +77,8 @@
 
 ## 気軽に使うならこれで十分
 
+<img src="image/happy.jpg" style="width: 300px; height: 500px;"/>
+
 ---
 
 ## 結論２：デプロイツールで解決
@@ -89,15 +96,18 @@
 ---
 
 ## 構成管理ってハードル高そう
-### chef-serverはハードル高いとの声がWebには多数
-### chef-soloがお気軽簡単で、chefブーム到来
-
-### chef-soloをもっと簡単に使えるようにしたものがknife-solo
+### chef-serverはハードル高いらしい
+### そこでchef-solo
+- ホスト1台に限定
+  - chefブーム到来
+  - ハードルの低さ重要
+- chef-soloをもっと簡単に使えるようにしたものがknife-solo
 
 ---
 
-## chef-soloで複数ホスト実行をうまくやるためには一工夫必要
-### (例：10台のfluentd設定ファイル書き換え)
+## 1台だけじゃつらい
+### chef-soloで複数ホスト実行をうまくやるためには一工夫必要
+#### (例：10台のfluentd設定ファイル書換え)
 - Capistranoでchef-soloをキック (Ruby x Rubyの黄金コンビ)
     - Roundsman
 - Knife Sous
@@ -107,13 +117,17 @@
 ## だんだんわけわからなくなってきましたか？
 ### = 始める前に覚えることが多い
 
+<img src="image/grief.jpg" style="width: 700px; height: 400px;"/>
+
 ---
 
+<!-- .slide: data-background="#33CC99" -->
 ## そこでansible
 ### Ansible is simplest way to automate IT.
 
 ---
 
+<!-- .slide: data-background="#FF9933" -->
 ## どれだけシンプルか
 1. yum install ansible (from epel)
 1. 接続先にssh接続できること
@@ -122,6 +136,7 @@
 
 ---
 
+<!-- .slide: data-background="#66CCFF" -->
 # Ansible デモ
 
 ---
@@ -146,7 +161,9 @@ jiro[1:100]
 
 ---
 
-## ansibleでどう管理するか設計が必要
+## 管理方法の設計が必要
+
+<img src="image/despair2.jpg" style="width: 700px; height: 400px;"/>
 
 ---
 
@@ -154,10 +171,11 @@ jiro[1:100]
 ### ディレクトリ/ファイル構成をこんな感じにすれば大体いい感じになる構成例
 - [ansible公式HP](http://docs.ansible.com/playbooks_best_practices.html)参照
 - 万能ではない
+- そこで
 
 ---
 
-## ムネオプラクティス
+# ムネオプラクティス
 - ムネオ = 私
 - ベストプラクティスを独自カスタマイズ
 - ムラクティス
@@ -173,7 +191,7 @@ jiro[1:100]
 
 --
 
-<!-- .slide: data-background="#000000" --> 
+<!-- .slide: data-background="#DDDDDD" --> 
 ##### 予定
 
 ---
@@ -196,6 +214,6 @@ jiro[1:100]
 
 ---
 
-# Conclusion
+## Conclusion
 - This presentation made by reveal.js and hosted by github pages.
 - If you like this, give me [Star](https://github.com/n10o/minimum-ansible) please.
