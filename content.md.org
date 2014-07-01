@@ -1,0 +1,32 @@
+    # 小さく始めるAnsible
+
+
+
+    ## 複数台のサーバ管理って 
+    ## どうしてますか？ 
+    * 新しいソフトのインストール
+    * hoge
+        - 並列にコマンドが打てればよい(pssh)
+        - ディストリビューションが違ったら？
+    * tomcat/nginxの設定一括変更
+
+
+
+    ## aa
+    ## aa
+    ### aa
+
+
+```
+- name: Server Setting
+  hosts: webservers
+  user: isao.nakamura
+  sudo: yes
+  gather_facts: no
+  roles:
+    - td-agent
+```
+
+
+
+    chefで同じことをやろうとすると
