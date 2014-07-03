@@ -85,11 +85,11 @@
 ```
 $ cat capfile
 role :web, "192.168.1.110", "192.168.1.120"
-task :mkdir, :roles => :web do
+task :secretdir, :roles => :web do
   run "mkdir my_secret_dir"
 end
 
-$ cap mkdir
+$ cap secretdir
 ```
 
 ---
@@ -116,6 +116,7 @@ $ cap mkdir
 
 # やっと登場
 # ansible
+### ～ 今度はしばらくchefの話になります ～
 
 ---
 
@@ -217,13 +218,6 @@ $ ansible-playbook -i hosts mkdir.yml
 
 ---
 
-<!-- .slide: data-background="#66CCFF" -->
-# Ansible デモ
-### Fluentd設定書換
-### ＋ サービス再起動
-
----
-
 ## 実運用の困りポイント
 - 規模が大きくなるとplaybookを分割しないときつい
 - 開発環境と本番環境で設定が違う
@@ -273,6 +267,13 @@ $ ansible-playbook -i hosts mkdir.yml
 
 <!-- .slide: data-background="#DDDDDD" --> 
 ##### 予定
+
+---
+
+<!-- .slide: data-background="#66CCFF" -->
+# Ansible デモ
+### Fluentd設定書換
+### ＋ サービス再起動
 
 ---
 
