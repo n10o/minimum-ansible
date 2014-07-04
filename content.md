@@ -38,10 +38,10 @@
 ---
 
 ## chefを導入していない
-### もうシステムは動いている
-### そんなに規模増えないし
-### そんな工数かけられない
-## 腰が重い
+## 今から導入するのは腰が重い
+- もうシステムは動いている
+- そんなに規模増えないし
+- そんな工数かけられない
 
 ---
 
@@ -53,11 +53,17 @@
 <!-- .slide: data-background="#33CC99" -->
 ## イギリスの産業革命
 - 工場制機械工業の導入により職を追われる人が急増
-- 手作業によりシステムに温かみが生まれる
-- 職人芸の尊重
 - 自動化すればいいというものではない
+    - 手作業によりシステムに温かみ(バグ)が生まれる
+    - 職人芸(バッドノウハウ)の尊重
 
 <img src="image/industrialrevolution.jpg" style="width: 800px; height: 400px;"/>
+
+--
+
+# 職人芸とは
+- かつて、jenkinsでビルドからデプロイに切替わるタイミングを目視監視し、そのタイミングに手作業で並列実行数を上げて高速化をしていた伝説の職人がいたそうな
+    - 「ムネオさん、うちのデプロイテクニックは素人が数日で身につけれるモノじゃないんだよ」
 
 ---
 
@@ -80,7 +86,7 @@
 ---
 
 ## Capistrano Example
-### my_secret_dirを複数ホストに作る
+my_secret_dirを複数ホストに作る
 
 ```
 $ cat capfile
@@ -94,9 +100,9 @@ $ cap secretdir
 
 ---
 
-## 気軽に使うならこれで十分
-
 <img src="image/happy.jpg" style="width: 300px; height: 500px;"/>
+
+## 気軽に使うならこれで十分
 
 ---
 
@@ -206,13 +212,13 @@ ansible -i hosts all -a 'mkdir my_secret_dir'
 # playbook
 ## 作業内容をコード化
 ```
-$ cat mkdir.yml
+$ cat secretdir.yml
 - hosts: webservers
   tasks:
    - name: create my poem directory
      file: dest=my_secret_dir state=directory
 
-$ ansible-playbook -i hosts mkdir.yml
+$ ansible-playbook -i hosts secretdir.yml
 
 ```
 
@@ -272,8 +278,15 @@ $ ansible-playbook -i hosts mkdir.yml
 
 <!-- .slide: data-background="#66CCFF" -->
 # Ansible デモ
-### Fluentd設定書換
-### ＋ サービス再起動
+### カジュアルに検証環境を
+### 破壊してみよう！
+
+--
+
+### カジュアルな
+# システム構成図
+
+<img src="image/demo.jpg" style="width: 800px; height: 400px;"/>
 
 ---
 
