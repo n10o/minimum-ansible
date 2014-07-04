@@ -181,9 +181,9 @@ $ cat hosts
 [webservers]
 192.168.1.110
 taro
-jiro[1:100]
+jiro[1:5]
 ```
-- jiro[1:100]とすればjiro1からjiro100まで実行可能
+- jiro[1:5]とすればjiro1からjiro5まで実行可能
 
 ---
 
